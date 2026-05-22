@@ -1,2 +1,2 @@
 # DSA
-DSA problems from LeetaCode
+DSA problems from LeetCode
