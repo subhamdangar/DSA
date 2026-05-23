@@ -4,7 +4,7 @@ class Solution:
         j = 1
         unique = 1
         num_len = len(nums)
-        while j <= num_len-1:
+        while j < num_len:
             if nums[i] == nums[j]:
                 j += 1
             else:
