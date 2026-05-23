@@ -7,12 +7,11 @@ class Solution:
         while j < num_len:
             if nums[i] == nums[j]:
                 j += 1
-                continue
             else:
                 nums[i+1] = nums[j]
                 i += 1
                 j += 1
                 unique += 1
 
-        return unique
+        return i+1
         
