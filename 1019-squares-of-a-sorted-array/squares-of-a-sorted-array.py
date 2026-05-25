@@ -1,3 +1,6 @@
+# TC = O(n)
+# SC = O(n) 
+
 # class Solution:
 #     def sortedSquares(self, nums: List[int]) -> List[int]:
 #         pos = []
@@ -47,7 +50,8 @@
         
 
 
-
+# TC = O(n)
+# SC = O(1) --> Ignoring the size of res as it is required output array
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
         n = len(nums)
