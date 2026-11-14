@@ -7,10 +7,7 @@ class Solution:
         j = 0
         n = len(nums)
         for i in range(n):
-            if nums[i] == 0:
-                i += 1
-            else:
+            if nums[i] != 0:
                 nums[i], nums[j] = nums[j], nums[i]
-                i += 1
                 j += 1
         
