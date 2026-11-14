@@ -3,15 +3,21 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        x = 0
-        y = 0
-        z = 0
-        for i in nums:
-            if i == 0:
-                x += 1
-            elif i == 1:
-                y += 1
+        n = len(nums)
+        low = 0
+        mid = 0
+        high = n-1
+        
+        for i in range(n):
+            if nums[mid] == 0:
+                nums[mid], nums[low] = nums[low], nums[mid]
+                low += 1
+                mid += 1
+            elif nums[mid] == 1:
+                mid += 1
             else:
-                z += 1
+                nums[mid], nums[high] = nums[high], nums[mid]
+                high -= 1
 
-        nums[:] = ([0]*x) + ([1]*y) + ([2]*z)
+
+        
