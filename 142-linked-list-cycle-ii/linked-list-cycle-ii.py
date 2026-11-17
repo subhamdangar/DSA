@@ -17,4 +17,6 @@ class Solution:
                     slow = slow.next
                     fast = fast.next
                 return fast    # aslo "reutrn slow" is okay
+
+        return None
         
