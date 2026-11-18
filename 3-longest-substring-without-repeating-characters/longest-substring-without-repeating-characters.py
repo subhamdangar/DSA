@@ -7,16 +7,17 @@ class Solution:
         char_set = set()
 
         while(j < n):
-            if (s[j] in char_set):
+            while (s[j] in char_set):
                 char_set.remove(s[i])
                 i += 1
-                # j += 1
 
-            else:
+            if (s[j] not in char_set):
                 char_set.add(s[j])
-                j += 1
+            
+            max_len = max(max_len, j-i+1)
 
-            max_len = max(max_len, j-i)
+            j += 1
+
 
         return max_len
 
