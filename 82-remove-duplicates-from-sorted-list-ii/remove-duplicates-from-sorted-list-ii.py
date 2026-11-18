@@ -14,7 +14,7 @@ class Solution:
             return None
         while(curr is not None and curr.next is not None):
             if (curr.val != curr.next.val):
-                prev = prev.next
+                prev = curr
                 curr = curr.next
             else:
                 while((curr.next != None) and (curr.val == curr.next.val)):
