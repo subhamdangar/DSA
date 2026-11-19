@@ -8,5 +8,6 @@ class Solution:
             max_profit = max(profit, max_profit)
             if price < min_price:
                 min_price = price
+                
         return max_profit
         
