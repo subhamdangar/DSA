@@ -15,8 +15,10 @@ class Solution:
             sum = carry
             if(t1):
                 sum = sum + t1.val
+                t1 = t1.next
             if(t2):
                 sum = sum + t2.val
+                t2 = t2.next
 
             new_node = ListNode(sum % 10)
             carry = sum // 10
@@ -24,10 +26,10 @@ class Solution:
             curr.next = new_node
             curr = curr.next
 
-            if(t1):
-                t1 = t1.next
-            if(t2):
-                t2 = t2.next
+            # if(t1):
+            #     t1 = t1.next
+            # if(t2):
+            #     t2 = t2.next
         
         if carry != 0:
             new_node = ListNode(carry)
