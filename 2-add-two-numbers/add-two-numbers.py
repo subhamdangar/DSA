@@ -4,44 +4,39 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        def reverse(head):
-            curr = head
-            prev = None
-            after = None
-            while curr is not None:
-                after = curr.next
-                curr.next = prev
-                prev = curr
-                curr = after
-
-            return prev
-
-        rev_l1 = reverse(l1)
-        rev_l2 = reverse(l2)
-        curr1 = rev_l1
-        curr2 = rev_l2
-        st1 = ''
-        st2 = ''
-        while curr1 is not None:
-            st1 = st1 + str(curr1.val)
-            curr1 = curr1.next
-
-        while curr2 is not None:
-            st2 = st2 + str(curr2.val)
-            curr2 = curr2.next
-
-        num = int(st1) + int(st2)
-        num1 = str(num)
-        num1 = num1[::-1]
-
-        dummy = ListNode(0)
+    def addTwoNumbers(self, l1: ListNode | None, l2: ListNode | None) -> ListNode | None:
+        t1 = l1
+        t2 = l2
+        carry = 0
+        dummy = ListNode(-1)
         curr = dummy
-        for ch in num1:
-            curr.next = ListNode(int(ch))
+        sum = 0
+        while(t1 != None or t2 != None):
+            sum = carry
+            if(t1):
+                sum = sum + t1.val
+            if(t2):
+                sum = sum + t2.val
+
+            new_node = ListNode(sum % 10)
+            carry = sum // 10
+
+            curr.next = new_node
             curr = curr.next
 
+            if(t1):
+                t1 = t1.next
+            if(t2):
+                t2 = t2.next
+        
+        if carry != 0:
+            new_node = ListNode(carry)
+            curr.next = new_node
+
         return dummy.next
+
+
         
 
+            
         
